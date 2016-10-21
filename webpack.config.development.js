@@ -6,7 +6,12 @@ config.entry.unshift('webpack-dev-server/client?http://localhost:8080');
 
 config.devServer = {
   hot: true,
-  inline: true
+  inline: true,
+  proxy: {
+    '/api/*': {
+      target: 'http://localhost:3000'
+    }
+  }
 };
 
 config.plugins.unshift(new webpack.HotModuleReplacementPlugin());

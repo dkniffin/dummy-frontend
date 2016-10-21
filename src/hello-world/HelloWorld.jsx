@@ -2,9 +2,8 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Greeting from './Greeting';
-import NameTaker from './NameTaker';
 
-import { setName } from './helloWorldActions';
+import { getName } from './helloWorldActions';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -15,7 +14,12 @@ const App = ({ name, onSubmit }) => {
   return (
     <div>
       <Greeting name={name} />
-      <NameTaker name={name} onSubmit={onSubmit} />
+      <button
+        id="name-button"
+        onClick={onSubmit}
+      >
+        Get Name
+      </button>
     </div>
   );
 };
@@ -30,8 +34,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSubmit: (name) => {
-      dispatch(setName(name));
+    onSubmit: () => {
+      dispatch(getName());
     }
   };
 };
