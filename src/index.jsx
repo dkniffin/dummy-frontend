@@ -1,3 +1,6 @@
+// TODO Change this to only run in certain environments
+require('es6-promise').polyfill();
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';

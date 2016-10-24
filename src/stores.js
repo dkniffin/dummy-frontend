@@ -6,7 +6,7 @@ import reducers from './reducers';
 export function configureStore() {
   const store = createStore(reducers, {}, compose(
     applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.devToolsExtension ? window.devToolsExtension() : f => f
   ));
 
   if (module.hot) {
