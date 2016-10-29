@@ -12,8 +12,12 @@ addons:
     packages:
       - g++-4.8
 before_script:
+  - curl https://raw.githubusercontent.com/dkniffin/dummy-qa/master/bin/before-test.sh -o /tmp/before-test.sh
+  - bash /tmp/before-test.sh
   - npm rebuild node-sass
 script:
   - npm run lint
   - NODE_ENV=test node --require babel-core/register node_modules/karma/bin/karma start --single-run
   - npm run build
+  - curl -s https://raw.githubusercontent.com/dkniffin/dummy-qa/master/bin/test.sh -o /tmp/test.sh
+  - bash /tmp/test.sh
