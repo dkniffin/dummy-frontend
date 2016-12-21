@@ -9,7 +9,7 @@ config.devServer = {
   inline: true,
   proxy: {
     '/api/*': {
-      target: 'http://localhost:3000'
+      target: 'http://dummybackend_api_1:3000'
     }
   }
 };

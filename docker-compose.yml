@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: npm run start -- --host '0.0.0.0'
+    volumes:
+      - .:/dummy-frontend
+    ports:
+      - "8080:8080"
+    external_links:
+      - dummybackend_api_1
+
+networks:
+  default:
+    external:
+      name: "dummy-network"

@@ -8,7 +8,6 @@ webpackConfig.module.loaders = [
   {test: /\.s(c|a)ss$/, loader: 'style'},
   {test: /\.s(c|a)ss$/, loader: 'css?modules'},
   {test: /\.s(c|a)ss$/, loader: 'postcss'},
-  {test: /\.s(c|a)ss$/, loader: 'sass', query: { outputStyle: 'expanded' }},
   {test:/\.(png|jpg|svg)$/, loader: 'url', query: { limit: 500 }},
   {test:/\.json$/, loader: 'json'}
 ]
